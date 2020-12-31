@@ -1,0 +1,42 @@
+{
+  "name": "@trackr/core",
+  "version": "0.1.0",
+  "description": "A library to create music with, by defining tracks, with notes, filters, effects, waves, ...",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/index.js",
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "test": "npx jest --runInBand --detectOpenHandles --colors --verbose --reporters=default",
+    "test:ci": "npx jest --ci --runInBand --silent --colors --coverage",
+    "prepublish": "npm run tsc"
+  },
+  "keywords": [
+    "music",
+    "web audio"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "transformIgnorePatterns": []
+  },
+  "author": "Joris Hermans",
+  "license": "ISC",
+  "homepage": "https://github.com/jorishermans/trackr",
+  "bugs": {
+    "url": "https://github.com/jorishermans/trackr/issues"
+  },
+  "dependencies": {
+    "@trackr/notes": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest-junit": "^11.1.0",
+    "ts-jest": "^26.4.1",
+    "typescript": "^4.0.3"
+  },
+  "files": [
+    "lib/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
