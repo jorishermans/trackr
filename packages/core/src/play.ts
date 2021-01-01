@@ -1,4 +1,12 @@
+import { TrackrStep } from "./trackr-step";
+
 var audioContext = new AudioContext();
+
+export function sequencer(steps: TrackrStep[]) {
+    steps.forEach((s, i) => {
+        play(i, s.frequency, s.duration)
+    })
+}
 
 export function play (index: number, frequency: number, duration: number) {
     var startTime = audioContext.currentTime + index
