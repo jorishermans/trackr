@@ -21,6 +21,10 @@
   "author": "Joris Hermans",
   "license": "ISC",
   "homepage": "https://github.com/jorishermans/trackr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jorishermans/trackr"
+  },
   "bugs": {
     "url": "https://github.com/jorishermans/trackr/issues"
   },
@@ -36,6 +40,7 @@
   "files": [
     "lib/"
   ],
+  "types": "./lib/index.d.ts",
   "publishConfig": {
     "access": "public"
   }
