@@ -1,6 +1,6 @@
 {
   "name": "@trackr/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A library to create music with, by defining tracks, with notes, filters, effects, waves, ...",
   "main": "./lib/cjs/index.js",
   "module": "./lib/index.js",
@@ -29,7 +29,7 @@
     "url": "https://github.com/jorishermans/trackr/issues"
   },
   "dependencies": {
-    "@trackr/notes": "^0.2.0"
+    "@trackr/notes": "^0.2.1"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",

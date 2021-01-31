@@ -1,13 +1,13 @@
 {
   "name": "trackr-sequencer-demo",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
-    "@trackr/notes": "^0.2.0",
-    "@trackr/core": "^0.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@trackr/core": "^0.2.1",
+    "@trackr/notes": "^0.2.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
