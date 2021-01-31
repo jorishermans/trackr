@@ -1,6 +1,8 @@
 {
   "packages": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
+  "loglevel": "success",
   "version": "0.2.0"
 }

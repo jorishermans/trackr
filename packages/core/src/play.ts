@@ -11,11 +11,12 @@ export function sequencer(steps: TrackrStep[]) {
 
 export async function play (index: number, frequency: number, duration: number, instrument: InstrumentFn) {
     var startTime = audioContext.currentTime + index;
-    var endTime = startTime + duration;
+    var endTime = audioContext.currentTime + index + duration;
   
     const nodeInstrument = await instrument(audioContext, frequency);
+    nodeInstrument.connect(audioContext.destination);
 
-    nodeInstrument.start(startTime)
-    nodeInstrument.stop(endTime)
+    nodeInstrument.start(startTime);
+    nodeInstrument.stop(endTime);
 }
    
