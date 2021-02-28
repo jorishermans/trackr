@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import { noteFrequency } from '@trackr/notes';
-import { oscillator, play, sequencer, TrackrStep } from '@trackr/core';
+import { biquadFilter, oscillator, play, sequencer, TrackrStep } from '@trackr/core';
 
 function App() {
+  
   const clickForNotes = () => {
-    const noteC3 = noteFrequency('C3');
+    const noteC3 = noteFrequency('A3');
     console.log(noteC3);
-    let steps = [new TrackrStep(noteC3, 1, oscillator({type: 'sawtooth'})),
+    const step = new TrackrStep(noteC3, 1, oscillator({type: 'sawtooth'}));
+    step.add(biquadFilter({type: 'highpass', frequency: 2000}));
+    let steps = [step,
       new TrackrStep(noteC3, 1, oscillator({type: 'sine'})),
       new TrackrStep(noteFrequency('A3'), 1, oscillator({type: 'sawtooth'}))];
     sequencer(steps);
