@@ -1,7 +1,8 @@
+import { GainOptions, gain } from './effect/gain';
 import { BiquadFilterOptions, biquadFilter } from './effect/biquad-filter';
 import { Instrument, InstrumentFn } from './instrument/instrument';
 import { play, sequencer } from './play'
-import { TrackrStep } from './trackr-step';
+import { step, TrackrStep } from './trackr-step';
 import { wave, WaveOptions } from './instrument/wave';
 import { oscillator, OscillatorOptions } from './instrument/oscillator';
 import { Effect, EffectFn } from './effect/effect';
@@ -9,6 +10,7 @@ export {
     play,
     sequencer,
     TrackrStep,
+    step,
     wave,
     WaveOptions,
     oscillator,
@@ -18,5 +20,7 @@ export {
     Effect,
     EffectFn,
     BiquadFilterOptions,
-    biquadFilter
+    biquadFilter,
+    GainOptions,
+    gain
 }
