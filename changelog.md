@@ -1,5 +1,8 @@
 ### Trackr
 
+## 0.2.2 
+* add the method step to index, also adding gain as a basic effect in the core library
+
 ## 0.2.1 
 * Fix play, to play something usefull
 
