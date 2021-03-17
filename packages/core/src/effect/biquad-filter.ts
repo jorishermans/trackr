@@ -5,11 +5,13 @@ export interface BiquadFilterOptions {
     frequency?: number;
 }
 
-export const biquadFilter: Effect<BiquadFilterOptions> = (options: BiquadFilterOptions) => {
+export const biquadFilter: Effect<BiquadFilterOptions> = (options?: BiquadFilterOptions) => {
     return (audioContext: AudioContext) => {
         const o = audioContext.createBiquadFilter();
-        o.type = options.type ?? 'allpass';
-        o.frequency.value = options.frequency ?? 8000;
+        if (options) {
+            o.type = options.type ? options.type : 'allpass';
+            o.frequency.value = options.frequency ? options.frequency : 8000;
+        }
         o.Q.value = 1;
         return o;
     }
