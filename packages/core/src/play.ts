@@ -23,7 +23,7 @@ export async function play (index: number, frequency: number, duration: number, 
     let latestSource: any = nodeInstrument;
     
     for (let e of effects) {
-        const nodeEffect = await e(audioContext);
+        const nodeEffect = await e(audioContext, startTime, endTime);
         latestSource.connect(nodeEffect);
         latestSource = nodeEffect;
     }
