@@ -20,11 +20,11 @@ export async function play (index: number, frequency: number, duration: number, 
     var endTime = audioContext.currentTime + index + duration;
   
     const nodeInstrument = await instrument(audioContext, frequency);
-    let latestSource: any = nodeInstrument;
+    let latestSource: AudioNode | AudioScheduledSourceNode = nodeInstrument;
     
     for (let e of effects) {
-        const nodeEffect = await e(audioContext, startTime, endTime);
-        latestSource.connect(nodeEffect);
+        const nodeEffect = await e(audioContext, {startTime, endTime, duration, latestSource, instrument: nodeInstrument});
+        // latestSource.connect(nodeEffect);
         latestSource = nodeEffect;
     }
     latestSource.connect(audioContext.destination);

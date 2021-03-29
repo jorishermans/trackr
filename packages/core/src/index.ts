@@ -4,7 +4,7 @@ import { play, sequencer } from './play'
 import { step, TrackrStep } from './trackr-step';
 import { wave, WaveOptions } from './instrument/wave';
 import { oscillator, OscillatorOptions } from './instrument/oscillator';
-import { Effect, EffectFn } from './effect/effect';
+import { Effect, EffectFn, EffectOptions } from './effect/effect';
 export {
     play,
     sequencer,
@@ -18,6 +18,7 @@ export {
     InstrumentFn,
     Effect,
     EffectFn,
+    EffectOptions,
     BiquadFilterOptions,
     biquadFilter
 }

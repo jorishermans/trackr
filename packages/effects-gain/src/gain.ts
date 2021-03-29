@@ -1,19 +1,23 @@
-import { Effect } from "@trackr/core";
+import { Effect, EffectOptions } from "@trackr/core";
 
 export interface GainOptions {
     value: number;
 }
 
 export const gain: Effect<GainOptions> = (options?: GainOptions) => {
-    return (audioContext: AudioContext) => {
-        return _gain(audioContext, options ? options.value : 0.5);
+    return (audioContext: AudioContext, eo: EffectOptions) => {
+        const o = _gain(audioContext, options ? options.value : 0.5);
+        eo.latestSource.connect(o);
+        return o;
     }
 }
 
 export const randomGain: Effect<void> = () => {
-    return (audioContext: AudioContext) => {
+    return (audioContext: AudioContext, eo: EffectOptions) => {
         const value = Math.random();
-        return _gain(audioContext, value);
+        const o = _gain(audioContext, value);
+        eo.latestSource.connect(o);
+        return o;
     }
 }
 

@@ -1,4 +1,4 @@
-import { Effect } from "@trackr/core";
+import { Effect, EffectOptions } from "@trackr/core";
 
 export interface EnvelopeOptions {
     attack: number;
@@ -8,10 +8,10 @@ export interface EnvelopeOptions {
 }
 
 export const envelope: Effect<EnvelopeOptions> = (options?: EnvelopeOptions) => {
-    return (audioContext: AudioContext, startTime: number, endTime: number) => {
+    return (audioContext: AudioContext, eo: EffectOptions) => {
         const adsr = audioContext.createGain();
         if (options) {
-            const t0 = startTime;
+            const t0 = eo.startTime;
             // vol:0
             adsr.gain.setValueAtTime(0, t0);
             // attack
@@ -23,6 +23,7 @@ export const envelope: Effect<EnvelopeOptions> = (options?: EnvelopeOptions) => 
             // release
             adsr.gain.setTargetAtTime(0, t1 + t2, options.release);
         }
+        eo.latestSource.connect(adsr);
         return adsr;
     }
 }
