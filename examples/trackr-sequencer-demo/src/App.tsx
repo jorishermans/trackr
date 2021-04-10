@@ -2,6 +2,7 @@ import './App.css';
 import { noteFrequency } from '@trackr/notes';
 import { envelope, gain, randomGain, vibrato } from '@trackr/effects-gain';
 import { biquadFilter, oscillator, step, sequencer, TrackrStep } from '@trackr/core';
+import { bass, trombone } from '@trackr/instruments';
 
 const nf = noteFrequency;
 
@@ -16,8 +17,11 @@ function App() {
     const s3 = step(nf('A3'), 1, oscillator({type: 'sine'}), randomGain());
     const s4 = step(nf('C3'), 1, oscillator({type: 'sawtooth'}), envelope({attack: 0.5, decay: 0.6, sustainLevel: 0.3, release: 0.7}));
     const s5 = step(nf('B3'), 1, oscillator({type: 'sawtooth'}), vibrato({frequency: 60, value: 5}));
+    const s6 = step(nf('D3'), 1, bass);
+    const s7 = step(nf('D4'), 1, trombone);
+    const s8 = step(nf('F3'), 1, trombone);
     // let steps = [s1, s2, s3, s4, step(nf('A3'), 1, oscillator({type: 'sawtooth'}), randomGain()), s5];
-    sequencer([s5]);
+    sequencer([s5, s6, s7, s8, s7, s8]);
     // play(0, noteC3, 1, oscillator({type: 'sine'}))
   }
   return (
