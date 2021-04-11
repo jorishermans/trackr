@@ -21,7 +21,7 @@ function App() {
     const s7 = step(nf('D4'), 1, trombone);
     const s8 = step(nf('F3'), 1, trombone);
     // let steps = [s1, s2, s3, s4, step(nf('A3'), 1, oscillator({type: 'sawtooth'}), randomGain()), s5];
-    sequencer([s5, s6, s7, s8, s7, s8]);
+    sequencer([s1, s2, s3, s4, s5, s6, s7, s8, s7, s8]);
     // play(0, noteC3, 1, oscillator({type: 'sine'}))
   }
   return (
