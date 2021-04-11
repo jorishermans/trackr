@@ -1,6 +1,6 @@
 {
   "name": "@trackr/notes",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Translate notes into frequency pitches for the web audio api",
   "main": "./lib/cjs/index.js",
   "module": "./lib/index.js",

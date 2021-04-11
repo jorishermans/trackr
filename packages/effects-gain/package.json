@@ -1,6 +1,6 @@
 {
   "name": "@trackr/effects-gain",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A subpackage of trackr that contains gain effects.",
   "main": "./lib/cjs/index.js",
   "module": "./lib/index.js",
@@ -27,7 +27,7 @@
     "url": "https://github.com/jorishermans/trackr"
   },
   "dependencies": {
-    "@trackr/core": "^0.3.0"
+    "@trackr/core": "^0.4.0"
   },
   "devDependencies": {
     "jest-junit": "^11.1.0",
