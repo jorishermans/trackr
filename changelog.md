@@ -1,6 +1,6 @@
 ### Trackr
 
-## 0.3.0
+## 0.4.0
 * add an instrument with wavebanks to the project
 
 ## 0.2.3 
